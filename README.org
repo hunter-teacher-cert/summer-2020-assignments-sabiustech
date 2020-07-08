@@ -1,6 +1,6 @@
 * Last name: Torres
 * First name: Alex
-* Github username:sabiustech
+* Github username: sabiustech
 
 * Instructions:
 
