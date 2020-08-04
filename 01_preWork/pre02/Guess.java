@@ -26,6 +26,6 @@ public class Guess {
         int diffGuess =  newNumber - userGuess;
         System.out.printf("You were off by: %d", diffGuess);
 
-    }
+    } //end main
 
-}//end
+}//end Guess class

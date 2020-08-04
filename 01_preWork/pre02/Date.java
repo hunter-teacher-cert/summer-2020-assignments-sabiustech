@@ -43,9 +43,9 @@ public class Date { //should this be public Date or public class Date?
       //display concatenated output (standard American format)
       System.out.print("European format: \n" + day + " " + date + " " + month + " " + year);
 
-      
-
-    }
 
 
-}
+    } //end main
+
+
+} //end Date class

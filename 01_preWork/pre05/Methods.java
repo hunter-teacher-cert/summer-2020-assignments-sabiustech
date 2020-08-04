@@ -43,7 +43,7 @@ public class Methods{
           int ackTwo = userNums.nextInt();
           System.out.println(ack(ackOne, ackTwo)); //call function & print return
 
-      }
+      } //end main method
 
 
 
@@ -56,10 +56,10 @@ public class Methods{
       * @return true if n is divisble by m, false otherwise
       */
 
-      public static boolean isDivisible(int n, int m){
+      public static boolean isDivisible(int n, int m){    //takes in two integers
 
-          return n % m == 0;
-      }
+          return n % m == 0;  //return true only if n mod m is 0
+      } //end isDivisible method
 
 
 
@@ -75,18 +75,18 @@ public class Methods{
       */
 
 
-      public static boolean isTriangle(int a, int b, int c){
+      public static boolean isTriangle(int a, int b, int c){    //takes in three integers
 
-          if (a > (b + c)) {
+          if (a > (b + c)) {          //return false if the sum of b & c is less than a
             return false;
-          } else if (b > (a + c)){
+          } else if (b > (a + c)){    //return false if the sum of a & c is less than b
             return false;
-          } else if (c > (a + b)){
+          } else if (c > (a + b)){    //return false if the sum of a & b is less than c
             return false;
           } else{
-            return true;
+            return true;              //if none of the above conditions are met, return true
           }
-      }
+      } //end isTriangle method
 
 
 
@@ -101,15 +101,16 @@ public class Methods{
       */
 
 
-      public static int ack(int m, int n){
+      public static int ack(int m, int n){  //takes in two integers
 
-          if (m == 0){
+          if (m == 0){                        //check if m is equal to 0 and if true, return n + 1
             return n + 1;
           }
-          if (m > 0 && n == 0){
-            return ack(m - 1, 1);
+          if (m > 0 && n == 0){               //check if m is greater than 0 AND n is equal to 0
+            return ack(m - 1, 1);             //if both conditions are true, return value of the function with m -1 and 1 as arguments
           }
-            return ack(m - 1, ack(m, n - 1));
-      }
+            return ack(m - 1, ack(m, n - 1));  //in all other cases, return the value of  m -1, and another call of the function with m and n-1 as the arguments
+                                                //continue until no function calls remain (until you return n + 1 for the final time)
+      } //end ack method
 
-} //end program
+} //end Methods class
