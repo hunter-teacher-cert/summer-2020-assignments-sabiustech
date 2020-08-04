@@ -13,7 +13,7 @@ public class LList {
       public LList() {
           head = null; //no value at head
           length = 0;  //since empty, no length
-      } //end constructor
+      } //end defualt constructor
 
 
       // creates an object (node) that will be placed at head
@@ -21,6 +21,11 @@ public class LList {
           Node newN = new Node(data, head); //create new Node
           head = newN; //point node to front
           length++; //update length instance variable to indicate list is no longer empty, etc.
+
+          if(data ==  null){
+            throw new IllegalArgumentException(); //exception for null data value
+          } //end if statement
+
       } //end addFront method
 
 
@@ -45,16 +50,16 @@ public class LList {
 
           Node pointer = head;
 
+          if(index >= this.length){
+            throw new IndexOutOfBoundsException(); //if the node is not at that index, through exception
+          } //end if statement
+
           while (pointer != null && first != index){ //while within the list, or until index is identified
             first += 1;         //go to the next node
             pointer = pointer.getNext();
           } //end while loop
 
-          if(pointer != null){        //if a node is present
-            return pointer.getData(); //return string data in that index
-          } else {
-            return null;              //if false, return null value
-          }//end if statement
+          return pointer.getData(); //return string data in that index
 
       } //end get method
 
@@ -68,14 +73,22 @@ public class LList {
               addFront(value);
           } //end if statement
 
+
+          if(index > this.length()){
+            throw new IndexOutOfBoundsException(); //throw exception if node index is beyond list
+          } //end if statement
+
+
+          if(value == null){
+            throw new IllegalArgumentException(); //throw exception if string data is null
+          } //end if statement
+
           oldIndex = getNode(index - 1); //search to get the index prior to the one desired
-          if(oldIndex == null){ //if the index is out of bounds, escape method
-            return;
-          } //end if statment
 
           Node newNode = new Node(value, oldIndex.getNext()); //create new node
           oldIndex.setNext(newNode); //set new node in the indicated index
           length++; //adjust the length of the list after the insertion.
+
         }  // end insert method (got help from classmate with this method)
 
 
@@ -84,7 +97,7 @@ public class LList {
         // Returns the String at that node if it existed
         // If index is invalid, do nothing.
         public String remove(int index) {
-            Node prev;
+            Node previous;
             String oldData = null;
 
             // Special case if index is 0. If head is null
@@ -104,14 +117,14 @@ public class LList {
             // If tmp == null, index is invalid. Else,
             // remove data from tmp.next if it's not null.
             // Point tmp to tmp.next.next.
-            prev = getNode(index - 1);
-            if (prev == null)
+            previous = getNode(index - 1);
+            if (previous == null)
                 return null;
 
-            Node cur = prev.getNext();
+            Node cur = previous.getNext();
             if (cur != null) {
                 oldData = cur.getData();
-                prev.setNext( cur.getNext() );
+                previous.setNext( cur.getNext() );
                 length--;
             }
 
