@@ -74,34 +74,4 @@ public class DriverStack {
         } //end num if statement
 
     } //end main method
-
-
-
-
-
-        // /* Testing pop*/
-        // System.out.println(s.pop());
-        // System.out.println(s.pop());
-        // System.out.println(s.pop());
-        // /* This should print me! push Don't" */
-        //
-        // //Should throw an exception when uncommented.
-        // // System.out.println(s.pop());
-        //
-        // //Should throw an exception when uncommented.
-        // // System.out.println(s.top());
-        //
-        // /* Add some more words to the stack */
-        // s.push("yoink");
-        // s.push("yeet");
-        // s.push("boomer");
-        // s.push("meme words");
-        // System.out.println(s);
-        //
-        // /* Test top */
-        // System.out.println(s.peek());
-        // System.out.println(s.peek());
-        // /* Should print meme words twice*/
-
-
 } //end DriverStack class
