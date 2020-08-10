@@ -3,13 +3,6 @@ import java.util.*;
 
 public class Boogle{
 
-  /*Note: Boogle.java uses unchecked or unsafe operations.
-  Note: Recompile with -Xlint:unchecked for details.
-  --I have tried for days to fix this. The only information I could muster
-  was that somewhere I did not identify a data type, but I looked over
-  all of the code and nowhere (that I can tell) is the data only pointing to
-  the location, but to the actual object. Will rewatch videos to see if I missed something.
-  */
 
       public static void main( String[] args ){
 
@@ -19,7 +12,7 @@ public class Boogle{
 
             int num = (int)(Math.random() * 11);
 
-            ArrayList <Integer> newList = prestoSortedArrayListo(num, 0, 20); //giving the arraylist a type did not fix the error code
+            ArrayList <Integer> newList = prestoSortedArrayListo(num, 0, 20);
             int target = (int)(Math.random() * 20);
 
             //print results
